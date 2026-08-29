@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Full-Stack Developer Portfolio</title>
+  <title>신재우 | Full-Stack Developer Portfolio</title>
   <style>
     :root {
       --bg: #f4f6f8;
@@ -194,8 +194,10 @@
     }
 
     .metric span {
+      display: block;
       color: var(--muted);
       font-size: 14px;
+      line-height: 1.45;
     }
 
     .project-header {
@@ -269,6 +271,14 @@
       border: 1px solid var(--line);
       border-radius: var(--radius-md);
       background: var(--surface);
+    }
+
+    .core-achievement {
+      border-top: 3px solid var(--primary);
+    }
+
+    .core-achievement h3 {
+      color: #172554;
     }
 
     .achievement .num {
@@ -464,9 +474,9 @@
         <span class="eyebrow">SPRING FULL-STACK DEVELOPER</span>
         <h1>문제를 발견하고,<br />서비스 구조까지 개선하는 개발자</h1>
         <p class="hero-description">
-          Spring 기반 웹 서비스의 프론트엔드부터 백엔드, 데이터베이스까지 폭넓게 개발해왔습니다.
-          기능 구현에 그치지 않고 성능 개선, 검색엔진 연동, 데이터 마이그레이션,
-          보안 취약점 개선 및 배치 시스템 재설계 경험을 보유하고 있습니다.
+          Java·Spring 기반 웹 서비스를 중심으로 프론트엔드부터 백엔드, 데이터베이스까지 개발해왔습니다.
+          운영 서비스의 SQL 성능 개선, 검색엔진 연동, 대규모 데이터 마이그레이션,
+          보안 취약점 조치와 통계 배치 재설계 등 서비스 개선 업무를 경험했습니다.
         </p>
       </div>
 
@@ -494,11 +504,11 @@
       <div class="summary-grid">
         <div class="metric">
           <strong>80%</strong>
-          <span>슬로우 쿼리 평균 성능 개선</span>
+          <span>슬로우 쿼리 평균 실행시간 단축</span>
         </div>
         <div class="metric">
           <strong>75%</strong>
-          <span>검색 시스템 성능 개선</span>
+          <span>검색 응답시간 단축</span>
         </div>
         <div class="metric">
           <strong>10만+</strong>
@@ -506,7 +516,7 @@
         </div>
         <div class="metric">
           <strong>400+</strong>
-          <span>소스코드 취약점 개선</span>
+          <span>보안 취약점 지적사항 조치</span>
         </div>
       </div>
     </section>
@@ -517,8 +527,9 @@
           <span class="eyebrow">REPRESENTATIVE PROJECT</span>
           <h2>교원 전용 디지털 콘텐츠 플랫폼 · ITDA</h2>
           <p>
-            교원을 위한 디지털 콘텐츠 플랫폼의 신규 기능 개발, 서비스 개편,
-            DB 성능 개선, 검색 시스템 구축, 외부 연동 API 및 통계 시스템 고도화 등을 담당했습니다.
+            교원 전용 디지털 콘텐츠 플랫폼의 운영 및 신규 기능 개발을 담당했습니다.
+            SQL·DB 성능 개선, 검색엔진 연동, 데이터 마이그레이션, 보안 취약점 조치,
+            통계 배치 고도화와 서비스 화면·API 개발을 수행했습니다.
           </p>
           <div class="stack">
             <span class="tag">Java</span>
@@ -544,94 +555,99 @@
       </div>
 
       <div class="achievement-list">
-        <article class="achievement">
+        <article class="achievement core-achievement">
           <span class="num">01</span>
           <h3>슬로우 쿼리 분석 및 SQL 성능 개선</h3>
           <p>
-            서비스 내 주요 조회 구간의 슬로우 쿼리와 병목 원인을 분석하고 SQL 구조를 개선했습니다.
+            운영 서비스의 슬로우 쿼리와 조회 병목 구간을 분석하고 SQL 및 DB 구조를 개선했습니다.
           </p>
           <ul>
-            <li>슬로우 쿼리 및 주요 조회 병목 구간 분석</li>
-            <li>비효율적인 조회 구조 개선 및 SQL 튜닝 수행</li>
-            <li>평균 처리 성능 <span class="highlight">약 80% 개선</span></li>
+            <li>인덱스를 활용하지 못하는 조회 조건을 분석하고 인덱스가 적용될 수 있도록 쿼리 조건 개선</li>
+            <li>WHERE 조건 및 조회 범위를 최적화하여 불필요한 데이터 탐색 감소</li>
+            <li>사용하지 않는 컬럼 및 불필요한 데이터 조회 제거</li>
+            <li>조회 성능 병목 구간에 대해 테이블 구조 및 인덱스 구성 개선</li>
+            <li>개선 대상 슬로우 쿼리의 <span class="highlight">평균 실행시간 약 80% 단축</span></li>
           </ul>
         </article>
 
-        <article class="achievement">
+        <article class="achievement core-achievement">
           <span class="num">02</span>
-          <h3>검색엔진 연동 및 검색 시스템 구축</h3>
+          <h3>코난테크놀로지 검색엔진 연동 및 검색 시스템 구축</h3>
           <p>
-            코난테크놀로지 검색엔진과 서비스를 연동하고 검색 데이터 흐름을 구축했습니다.
+            기존 검색 기능을 분석해 검색엔진 적용 대상을 선정하고 색인부터 서비스 연동까지 구현했습니다.
           </p>
           <ul>
-            <li>검색엔진 색인을 위한 DB View 설계 및 구현</li>
-            <li>검색엔진 API 호출 및 검색 결과 처리를 위한 연동 클래스 개발</li>
-            <li>기존 검색 방식 대비 <span class="highlight">검색 성능 약 75% 개선</span></li>
+            <li>기존 검색 기능 분석 및 검색엔진 적용 대상 기능 선정</li>
+            <li>검색엔진 색인을 위한 데이터베이스 View 설계 및 구현</li>
+            <li>검색 조건을 검색엔진 요청 파라미터로 변환하는 API 연동 로직 개발</li>
+            <li>검색 결과를 기존 서비스 데이터 구조에 맞게 가공 및 매핑</li>
+            <li>기존 검색 방식 대비 <span class="highlight">검색 응답시간 약 75% 단축</span></li>
           </ul>
         </article>
 
-        <article class="achievement">
+        <article class="achievement core-achievement">
           <span class="num">03</span>
           <h3>교육과정 개편에 따른 대규모 DB 마이그레이션</h3>
           <p>
-            교육과정 개편에 맞춰 콘텐츠 분류 체계를 변경하고 대규모 데이터를 이관했습니다.
+            교육과정 개편에 맞춰 대규모 콘텐츠 데이터를 신규 교육과정 체계로 이관하고 결과를 검증했습니다.
           </p>
           <ul>
             <li>약 <span class="highlight">10만 건</span>의 콘텐츠 데이터 마이그레이션 수행</li>
-            <li>기존·신규 교육과정 데이터 매핑</li>
-            <li>마이그레이션 결과 및 데이터 정합성 검증</li>
+            <li>사전 정의된 변환 기준에 따라 기존 콘텐츠 데이터를 신규 교육과정 체계에 맞게 변환</li>
+            <li>마이그레이션 전·후 검증을 위한 비교 대상 데이터 및 정합성 검증 기준 선정</li>
+            <li>선정한 기준을 바탕으로 데이터 누락·중복·불일치 여부 확인</li>
           </ul>
         </article>
 
-        <article class="achievement">
+        <article class="achievement core-achievement">
           <span class="num">04</span>
-          <h3>채널 서비스 UI·기능 구조 전면 개편</h3>
+          <h3>웹 애플리케이션 보안 취약점 지적사항 약 400건 조치</h3>
           <p>
-            기존 채널 영역의 UI 구조와 사용자 동작 기반 화면 로직을 전면 개편했습니다.
-          </p>
-          <ul>
-            <li>채널 관리자 페이지 <b>5개</b> UI 및 기능 개편</li>
-            <li>채널 사용자 페이지 <b>6개</b> UI 및 기능 개편</li>
-            <li>프론트엔드 화면과 백엔드 데이터 연동 로직 개선</li>
-          </ul>
-        </article>
-
-        <article class="achievement">
-          <span class="num">05</span>
-          <h3>웹 애플리케이션 보안 취약점 약 400건 개선</h3>
-          <p>
-            보안 점검을 통해 발견된 소스코드 취약점을 유형별로 분석하고 개선했습니다.
+            보안 점검을 통해 확인된 소스코드 취약점 지적사항을 유형별로 분석하고 개선했습니다.
           </p>
           <ul>
             <li>HTTP Method 미지정 구간에 GET·POST 등 요청 방식 명확화</li>
-            <li>CORS 와일드카드(<code>*</code>) 허용 정책 개선</li>
-            <li>사용자 입력값을 통한 서버 파일 경로 조작 가능성 개선</li>
+            <li>CORS 와일드카드(<code>*</code>) 허용 설정을 개선하여 허용 Origin 범위 제한</li>
+            <li>사용자 입력값이 서버 파일 경로에 영향을 줄 수 있는 로직 개선</li>
           </ul>
         </article>
 
-        <article class="achievement">
-          <span class="num">06</span>
+        <article class="achievement core-achievement">
+          <span class="num">05</span>
           <h3>주간·월간 통계 배치 시스템 고도화</h3>
           <p>
-            조건에 따라 통계값이 변경되는 기존 집계 구조를 분석하고 배치 중심으로 재설계했습니다.
+            특정 조건에 따라 통계값이 변경되는 기존 집계 구조의 문제를 분석하고 통계 처리 방식을 재설계했습니다.
           </p>
           <ul>
-            <li>기존 주간 통계 처리 구조 분석 및 재설계</li>
-            <li>주간 통계 배치 로직 구현</li>
+            <li>기존 주간 통계 처리 구조 및 통계값 변경 조건 분석</li>
+            <li>통계 산출 로직 및 주간 통계 배치 시스템 재설계·구현</li>
             <li>월간 통계 집계 구조 신규 설계 및 구현</li>
           </ul>
         </article>
 
         <article class="achievement">
-          <span class="num">07</span>
+          <span class="num">06</span>
           <h3>외부 업체 연계를 위한 API 개발</h3>
           <p>
-            교원 회원 중심의 내부 서비스 데이터를 외부 업체에서도 활용할 수 있도록 연동 API를 개발했습니다.
+            기존 교원 회원 인증을 전제로 제공되던 서비스 기능을 외부 업체에서도 활용할 수 있도록 연동 API를 개발했습니다.
           </p>
           <ul>
             <li>기존 로그인 기반 서비스 로직과 외부 연동용 처리 구조 분리</li>
-            <li>외부 시스템에서 사용할 수 있는 데이터 조회 API 구현</li>
-            <li>내부 서비스와 연계되는 백엔드 응답 처리 로직 개발</li>
+            <li>외부 시스템에서 사용할 수 있는 데이터 조회 및 응답 로직 구현</li>
+            <li>내부 서비스 로직과 외부 연동 기능 간 데이터 처리 구조 구현</li>
+          </ul>
+        </article>
+
+        <article class="achievement">
+          <span class="num">07</span>
+          <h3>채널 서비스 UI·기능 구조 전면 개편</h3>
+          <p>
+            기존 채널 서비스의 화면 구조와 사용자 동작 로직을 전면 개편하고 백엔드 데이터 연동을 개선했습니다.
+          </p>
+          <ul>
+            <li>채널 관리자 페이지 <b>5개</b>, 사용자 페이지 <b>6개</b>의 UI 및 기능 개선</li>
+            <li>사용자 동작에 따른 화면 로직 및 데이터 처리 기능 구현</li>
+            <li>프론트엔드 화면과 백엔드 데이터 연동 로직 개선</li>
           </ul>
         </article>
 
@@ -639,12 +655,12 @@
           <span class="num">08</span>
           <h3>월별 프로모션 이벤트 Full-Stack 개발</h3>
           <p>
-            다양한 형태의 프로모션 이벤트를 프론트엔드부터 백엔드 데이터 처리까지 개발했습니다.
+            월 단위로 운영되는 다양한 프로모션 이벤트를 프론트엔드부터 백엔드까지 지속적으로 개발했습니다.
           </p>
           <ul>
-            <li>댓글, 콘텐츠 공유, 포인트 적립, 스텝형 이벤트 개발</li>
-            <li>이벤트 UI 및 사용자 동작 로직 구현</li>
-            <li>참여 데이터 저장·조회 등 프론트엔드–백엔드 연동 기능 개발</li>
+            <li>댓글, 콘텐츠 공유, 포인트 적립, 스텝형 등 다양한 이벤트 유형 개발</li>
+            <li>이벤트별 UI 및 사용자 동작 로직 구현</li>
+            <li>참여 데이터 저장·조회 등 프론트엔드와 백엔드 연동 기능 개발</li>
           </ul>
         </article>
       </div>
@@ -659,61 +675,61 @@
       <div class="cases">
         <article class="case">
           <div class="case-top">
-            <h3>CASE 01. SQL 조회 성능 개선</h3>
+            <h3>CASE 01. 슬로우 쿼리 및 DB 조회 구조 개선</h3>
             <span class="case-label">PERFORMANCE</span>
           </div>
           <div class="case-grid">
             <b>문제</b>
-            <p>서비스 일부 조회 구간에서 응답 지연이 발생하고 슬로우 쿼리가 누적되었습니다.</p>
+            <p>운영 서비스 일부 조회 기능에서 실행시간이 길어지는 슬로우 쿼리가 발생했습니다.</p>
 
             <b>분석</b>
-            <p>실행 시간이 긴 SQL과 반복 조회 구조를 확인하고 병목이 발생하는 조회 조건과 데이터 접근 방식을 분석했습니다.</p>
+            <p>인덱스를 활용하지 못하는 조건, 불필요하게 넓은 조회 범위와 사용하지 않는 데이터 조회 구간을 확인했습니다.</p>
 
             <b>개선</b>
-            <p>불필요한 데이터 조회와 비효율적인 SQL 구조를 정리하고 쿼리 실행 방식을 개선했습니다.</p>
+            <p>WHERE 조건과 조회 범위를 정리하고 불필요한 조회를 제거했으며, 병목 구간은 테이블 구조와 인덱스 구성을 함께 개선했습니다.</p>
 
             <b>결과</b>
-            <p>슬로우 쿼리의 평균 처리 성능을 <span class="highlight">약 80% 개선</span>했습니다.</p>
+            <p>개선 대상 슬로우 쿼리의 <span class="highlight">평균 실행시간을 약 80% 단축</span>했습니다.</p>
           </div>
         </article>
 
         <article class="case">
           <div class="case-top">
-            <h3>CASE 02. 검색엔진 연동</h3>
+            <h3>CASE 02. 검색엔진 적용 및 서비스 연동</h3>
             <span class="case-label">SEARCH</span>
           </div>
           <div class="case-grid">
-            <b>문제</b>
-            <p>기존 검색 방식에서 콘텐츠 증가에 따라 검색 응답 속도와 검색 기능 확장성 개선이 필요했습니다.</p>
+            <b>탐색</b>
+            <p>기존 서비스의 검색 기능을 분석하고 검색엔진 적용 효과가 큰 기능을 선정했습니다.</p>
 
-            <b>설계</b>
-            <p>코난테크놀로지 검색엔진에서 색인할 수 있도록 필요한 데이터를 제공하는 DB View를 구성했습니다.</p>
+            <b>데이터</b>
+            <p>검색엔진에서 사용할 데이터를 색인할 수 있도록 데이터베이스 View를 설계하고 구현했습니다.</p>
 
-            <b>구현</b>
-            <p>검색엔진 API를 호출하고 검색 결과를 서비스에서 사용할 수 있도록 연동 클래스를 개발했습니다.</p>
+            <b>연동</b>
+            <p>검색 조건을 API 요청 파라미터로 변환하고 검색 결과를 기존 서비스 구조에 맞게 가공·매핑하는 연동 로직을 개발했습니다.</p>
 
             <b>결과</b>
-            <p>검색 성능을 기존 대비 <span class="highlight">약 75% 개선</span>했습니다.</p>
+            <p>기존 검색 방식 대비 <span class="highlight">검색 응답시간을 약 75% 단축</span>했습니다.</p>
           </div>
         </article>
 
         <article class="case">
           <div class="case-top">
-            <h3>CASE 03. 보안 취약점 개선</h3>
-            <span class="case-label">SECURITY</span>
+            <h3>CASE 03. 10만 건 콘텐츠 DB 마이그레이션</h3>
+            <span class="case-label">DATA</span>
           </div>
           <div class="case-grid">
-            <b>범위</b>
-            <p>보안 점검에서 확인된 약 400건의 소스코드 취약점을 유형별로 분석했습니다.</p>
+            <b>목표</b>
+            <p>교육과정 개편에 따라 기존 콘텐츠 데이터를 신규 교육과정 체계에 맞게 이관해야 했습니다.</p>
 
-            <b>개선 1</b>
-            <p>Controller 요청 방식을 명확히 제한하여 불필요한 HTTP Method 허용 범위를 축소했습니다.</p>
+            <b>처리</b>
+            <p>사전 정의된 변환 기준을 바탕으로 약 10만 건의 콘텐츠 데이터를 변환·이관했습니다.</p>
 
-            <b>개선 2</b>
-            <p>모든 Origin을 허용하는 CORS 정책을 서비스 정책에 맞게 제한했습니다.</p>
+            <b>검증</b>
+            <p>마이그레이션 전·후 비교에 사용할 데이터와 정합성 검증 기준을 선정하고 누락·중복·불일치 여부를 확인했습니다.</p>
 
-            <b>개선 3</b>
-            <p>사용자 입력값이 서버 파일 경로에 직접 영향을 줄 수 있는 로직을 수정해 경로 조작 가능성을 줄였습니다.</p>
+            <b>경험</b>
+            <p>대량 데이터 변경 과정에서 이관뿐 아니라 결과 검증까지 포함한 마이그레이션 업무를 수행했습니다.</p>
           </div>
         </article>
       </div>
@@ -725,8 +741,8 @@
           <span class="eyebrow">PROJECT 02</span>
           <h2>SteamUp</h2>
           <p>
-            Go와 React 기반의 웹 서비스에서 관리자 기능 개발과 교과 콘텐츠 제작,
-            웹표준 오류 개선 업무를 담당했습니다.
+            Go와 React 기반 웹 서비스에서 Locale 데이터 관리 기능을 개발하고,
+            교과 콘텐츠 제작 및 웹표준 오류 개선 업무를 수행했습니다.
           </p>
           <div class="stack">
             <span class="tag">Go</span>
@@ -739,8 +755,9 @@
 
         <div class="project-meta">
           <div><b>역할</b> Full-Stack 개발</div>
-          <div><b>기술</b> Go · React</div>
-          <div><b>담당</b> Admin · Content</div>
+          <div><b>분야</b> 교육 / 콘텐츠 서비스</div>
+          <div><b>담당</b> Front · Back</div>
+          <div><b>형태</b> 관리자 기능 및 콘텐츠 개발</div>
         </div>
       </div>
 
@@ -775,14 +792,14 @@
 
     <section>
       <div class="section-heading">
-        <h2>Technical Strengths</h2>
+        <h2>핵심 역량</h2>
         
       </div>
 
       <div class="achievement-list">
         <article class="achievement">
           <h3>Full-Stack 구현 경험</h3>
-          <p>화면 UI부터 JavaScript 동작, Controller, Service, Mapper, DB까지 기능 전체 흐름을 구현할 수 있습니다.</p>
+          <p>화면 UI와 JavaScript 동작부터 Controller, Service, Mapper, DB까지 기능 전체 흐름을 직접 구현한 경험이 있습니다.</p>
         </article>
 
         <article class="achievement">
@@ -792,7 +809,7 @@
 
         <article class="achievement">
           <h3>데이터·성능 문제 해결</h3>
-          <p>대규모 데이터 마이그레이션, 슬로우 쿼리 분석, SQL 튜닝 및 검색 성능 개선 경험을 보유하고 있습니다.</p>
+          <p>10만 건 규모 데이터 마이그레이션과 슬로우 쿼리 분석, SQL·DB 구조 개선 및 검색 성능 개선 경험이 있습니다.</p>
         </article>
 
         <article class="achievement">
