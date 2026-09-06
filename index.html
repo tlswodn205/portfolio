@@ -326,6 +326,17 @@
       font-weight: 900;
     }
 
+
+    .problem-solving-block {
+      margin-top: 34px;
+      margin-bottom: 36px;
+      scroll-margin-top: 24px;
+    }
+
+    .itda-subheading {
+      margin-top: 34px;
+    }
+
     .cases {
       display: grid;
       gap: 18px;
@@ -439,7 +450,21 @@
 
     .side-nav-links {
       display: grid;
-      gap: 7px;
+      gap: 22px;
+    }
+
+    .nav-group {
+      display: grid;
+      gap: 6px;
+    }
+
+    .nav-group-title {
+      display: block;
+      padding: 0 12px 4px;
+      color: #667085;
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: .08em;
     }
 
     .side-nav a.nav-link {
@@ -450,6 +475,25 @@
       font-size: 14px;
       font-weight: 750;
       transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+
+    .side-nav a.nav-link-project {
+      color: #ffffff;
+      font-weight: 850;
+    }
+
+    .side-nav a.nav-link-sub {
+      margin-left: 8px;
+      padding: 9px 12px;
+      color: #98a2b3;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .nav-branch {
+      display: inline-block;
+      margin-right: 5px;
+      color: #667085;
     }
 
     .side-nav a.nav-link:hover,
@@ -477,7 +521,7 @@
       display: none;
     }
 
-    header[id], section[id] {
+    header[id], section[id], #problem-solving {
       scroll-margin-top: 24px;
     }
 
@@ -693,12 +737,29 @@
       <button class="nav-close" id="navClose" type="button" aria-label="메뉴 닫기">×</button>
     </div>
     <div class="side-nav-links">
-      <a class="nav-link active" href="#home">Profile</a>
-      <a class="nav-link" href="#itda">ITDA</a>
-      <a class="nav-link" href="#problem-solving">Problem Solving</a>
-      <a class="nav-link" href="#steamup">SteamUp</a>
-      <a class="nav-link" href="#science-on">지능형 과학실 ON</a>
-      <a class="nav-link" href="#core-skills">핵심 역량</a>
+      <div class="nav-group">
+        <span class="nav-group-title">프로필</span>
+        <a class="nav-link active" href="#home">Profile</a>
+      </div>
+
+      <div class="nav-group">
+        <span class="nav-group-title">대표 프로젝트</span>
+        <a class="nav-link nav-link-project" href="#itda">ITDA</a>
+        <a class="nav-link nav-link-sub" href="#problem-solving">
+          <span class="nav-branch">└</span> 대표 문제 해결 경험
+        </a>
+      </div>
+
+      <div class="nav-group">
+        <span class="nav-group-title">기타 프로젝트</span>
+        <a class="nav-link" href="#steamup">STEAMuP</a>
+        <a class="nav-link" href="#science-on">지능형 과학실 ON</a>
+      </div>
+
+      <div class="nav-group">
+        <span class="nav-group-title">역량</span>
+        <a class="nav-link" href="#core-skills">핵심 역량</a>
+      </div>
     </div>
   </nav>
 
@@ -749,16 +810,21 @@
           </p>
           <div class="stack">
             <span class="tag">Java</span>
-            <span class="tag">Spring MVC</span>
-            <span class="tag">e-Government Framework</span>
+            <span class="tag">Spring</span>
             <span class="tag">MyBatis</span>
-            <span class="tag">MariaDB / MySQL</span>
-            <span class="tag">JSP / JSTL</span>
-            <span class="tag">JavaScript / jQuery</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">jQuery</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Git</span>
+            <span class="tag">JWT</span>
           </div>
         </div>
 
         <div class="project-meta">
+          <div><b>기간</b> 2024.02 - 2026.02</div>
           <div><b>역할</b> Full-Stack 개발</div>
           <div><b>분야</b> 교육 / 콘텐츠 플랫폼</div>
           <div><b>담당</b> Front · Back · DB</div>
@@ -766,137 +832,9 @@
         </div>
       </div>
 
-      <div class="section-heading">
-        <h2>주요 수행 업무</h2>
-      </div>
-
-      <div class="achievement-list">
-        <article class="achievement core-achievement">
-          <span class="num">01</span>
-          <h3>슬로우 쿼리 분석 및 SQL 성능 개선</h3>
-          <p>
-            운영 서비스의 슬로우 쿼리와 조회 병목 구간을 분석하고 SQL 및 DB 구조를 개선했습니다.
-          </p>
-          <ul>
-            <li>인덱스를 활용하지 못하는 조회 조건을 분석하고 인덱스가 적용될 수 있도록 쿼리 조건 개선</li>
-            <li>WHERE 조건 및 조회 범위를 최적화하여 불필요한 데이터 탐색 감소</li>
-            <li>사용하지 않는 컬럼 및 불필요한 데이터 조회 제거</li>
-            <li>조회 성능 병목 구간에 대해 테이블 구조 및 인덱스 구성 개선</li>
-            <li>개선 대상 슬로우 쿼리의 <span class="highlight">평균 실행시간 약 80% 단축</span></li>
-          </ul>
-        </article>
-
-        <article class="achievement core-achievement">
-          <span class="num">02</span>
-          <h3>코난테크놀로지 검색엔진 연동 및 검색 시스템 구축</h3>
-          <p>
-            기존 검색 기능을 분석해 검색엔진 적용 대상을 선정하고 색인부터 서비스 연동까지 구현했습니다.
-          </p>
-          <ul>
-            <li>기존 검색 기능 분석 및 검색엔진 적용 대상 기능 선정</li>
-            <li>검색엔진 색인을 위한 데이터베이스 View 설계 및 구현</li>
-            <li>검색 조건을 검색엔진 요청 파라미터로 변환하는 API 연동 로직 개발</li>
-            <li>검색 결과를 기존 서비스 데이터 구조에 맞게 가공 및 매핑</li>
-            <li>기존 검색 방식 대비 <span class="highlight">검색 응답시간 약 75% 단축</span></li>
-          </ul>
-        </article>
-
-        <article class="achievement core-achievement">
-          <span class="num">03</span>
-          <h3>교육과정 개편에 따른 대규모 DB 마이그레이션</h3>
-          <p>
-            교육과정 개편에 맞춰 대규모 콘텐츠 데이터를 신규 교육과정 체계로 이관하고 결과를 검증했습니다.
-          </p>
-          <ul>
-            <li>약 <span class="highlight">10만 건</span>의 콘텐츠 데이터 마이그레이션 수행</li>
-            <li>사전 정의된 변환 기준에 따라 기존 콘텐츠 데이터를 신규 교육과정 체계에 맞게 변환</li>
-            <li>마이그레이션 전·후 검증을 위한 비교 대상 데이터 및 정합성 검증 기준 선정</li>
-            <li>선정한 기준을 바탕으로 데이터 누락·중복·불일치 여부 확인</li>
-          </ul>
-        </article>
-
-        <article class="achievement core-achievement">
-          <span class="num">04</span>
-          <h3>웹 애플리케이션 보안 취약점 지적사항 약 400건 조치</h3>
-          <p>
-            보안 점검을 통해 확인된 소스코드 취약점 지적사항을 유형별로 분석하고 개선했습니다.
-          </p>
-          <ul>
-            <li>HTTP Method 미지정 구간에 GET·POST 등 요청 방식 명확화</li>
-            <li>CORS 와일드카드(<code>*</code>) 허용 설정을 개선하여 허용 Origin 범위 제한</li>
-            <li>사용자 입력값이 서버 파일 경로에 영향을 줄 수 있는 로직 개선</li>
-          </ul>
-        </article>
-
-        <article class="achievement core-achievement">
-          <span class="num">05</span>
-          <h3>CentOS → Rocky Linux WAS 서버 환경 이전</h3>
-          <p>
-            기존 CentOS 기반 WAS 서버를 Rocky Linux 환경으로 이전하는 작업에 참여했습니다.
-          </p>
-          <ul>
-            <li>CentOS 기반 WAS 서버 환경을 Rocky Linux로 이전</li>
-            <li>서비스 이전 후 애플리케이션 구동 및 주요 기능 정상 동작 확인</li>
-          </ul>
-        </article>
-
-        <article class="achievement core-achievement">
-          <span class="num">06</span>
-          <h3>주간·월간 통계 배치 시스템 고도화</h3>
-          <p>
-            특정 조건에 따라 통계값이 변경되는 기존 집계 구조의 문제를 분석하고 통계 처리 방식을 재설계했습니다.
-          </p>
-          <ul>
-            <li>기존 주간 통계 처리 구조 및 통계값 변경 조건 분석</li>
-            <li>통계 산출 로직 및 주간 통계 배치 시스템 재설계·구현</li>
-            <li>월간 통계 집계 구조 신규 설계 및 구현</li>
-          </ul>
-        </article>
-
-        <article class="achievement">
-          <span class="num">07</span>
-          <h3>외부 업체 연계를 위한 API 개발</h3>
-          <p>
-            기존 교원 회원 인증을 전제로 제공되던 서비스 기능을 외부 업체에서도 활용할 수 있도록 연동 API를 개발했습니다.
-          </p>
-          <ul>
-            <li>기존 로그인 기반 서비스 로직과 외부 연동용 처리 구조 분리</li>
-            <li>외부 시스템에서 사용할 수 있는 데이터 조회 및 응답 로직 구현</li>
-            <li>내부 서비스 로직과 외부 연동 기능 간 데이터 처리 구조 구현</li>
-          </ul>
-        </article>
-
-        <article class="achievement">
-          <span class="num">08</span>
-          <h3>채널 서비스 UI·기능 구조 전면 개편</h3>
-          <p>
-            기존 채널 서비스의 화면 구조와 사용자 동작 로직을 전면 개편하고 백엔드 데이터 연동을 개선했습니다.
-          </p>
-          <ul>
-            <li>채널 관리자 페이지 <b>5개</b>, 사용자 페이지 <b>6개</b>의 UI 및 기능 개선</li>
-            <li>사용자 동작에 따른 화면 로직 및 데이터 처리 기능 구현</li>
-            <li>프론트엔드 화면과 백엔드 데이터 연동 로직 개선</li>
-          </ul>
-        </article>
-
-        <article class="achievement">
-          <span class="num">09</span>
-          <h3>월별 프로모션 이벤트 Full-Stack 개발</h3>
-          <p>
-            월 단위로 운영되는 다양한 프로모션 이벤트를 프론트엔드부터 백엔드까지 지속적으로 개발했습니다.
-          </p>
-          <ul>
-            <li>댓글, 콘텐츠 공유, 포인트 적립, 스텝형 등 다양한 이벤트 유형 개발</li>
-            <li>이벤트별 UI 및 사용자 동작 로직 구현</li>
-            <li>참여 데이터 저장·조회 등 프론트엔드와 백엔드 연동 기능 개발</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section id="problem-solving">
-      <div class="section-heading">
-        <h2>Problem Solving Cases</h2>
+      <div id="problem-solving" class="problem-solving-block">
+<div class="section-heading">
+        <h2>대표 문제 해결 경험</h2>
         
       </div>
 
@@ -908,16 +846,16 @@
           </div>
           <div class="case-grid">
             <b>문제</b>
-            <p>운영 서비스 일부 조회 기능에서 실행시간이 길어지는 슬로우 쿼리가 발생했습니다.</p>
+            <p>사이트를 인계받은 후 기능 테스트를 진행하는 과정에서 일부 조회 기능의 응답 속도가 느린 것을 발견했습니다. 해당 기능에서 실행되는 SQL과 데이터 조회 구조를 확인해 성능 병목을 분석했습니다.</p>
 
             <b>분석</b>
-            <p>인덱스를 활용하지 못하는 조건, 불필요하게 넓은 조회 범위와 사용하지 않는 데이터 조회 구간을 확인했습니다.</p>
+            <p>조회 패턴과 인덱스 구성을 확인하고, WHERE 절 및 조회 범위, 불필요한 컬럼·데이터 조회 여부와 성능 병목이 발생하는 구간의 테이블 구조를 확인했습니다.</p>
 
             <b>개선</b>
-            <p>WHERE 조건과 조회 범위를 정리하고 불필요한 조회를 제거했으며, 병목 구간은 테이블 구조와 인덱스 구성을 함께 개선했습니다.</p>
+            <p>조회 패턴에 맞는 인덱스를 추가하고 WHERE 절과 조회 범위를 최적화했으며, 불필요한 조회를 제거하고 성능 병목 구간의 테이블 구조를 개선했습니다.</p>
 
             <b>결과</b>
-            <p>개선 대상 슬로우 쿼리의 <span class="highlight">평균 실행시간을 약 80% 단축</span>했습니다.</p>
+            <p>개선 전·후 실행시간을 비교한 결과, 대상 슬로우 쿼리의 <span class="highlight">평균 실행시간을 약 80% 단축</span>했습니다.</p>
           </div>
         </article>
 
@@ -927,17 +865,17 @@
             <span class="case-label">SEARCH</span>
           </div>
           <div class="case-grid">
-            <b>탐색</b>
-            <p>기존 서비스의 검색 기능을 분석하고 검색엔진 적용 효과가 큰 기능을 선정했습니다.</p>
+            <b>업무 배경</b>
+            <p>기존 서비스의 검색 기능에 코난테크놀로지 검색엔진을 연동하는 업무를 담당했습니다. 정해진 검색엔진을 기존 서비스의 검색 조건과 데이터 구조에 맞게 연결하는 것이 주요 역할이었습니다.</p>
 
-            <b>데이터</b>
-            <p>검색엔진에서 사용할 데이터를 색인할 수 있도록 데이터베이스 View를 설계하고 구현했습니다.</p>
+            <b>분석</b>
+            <p>기존 검색 기능의 처리 흐름과 조회 특성을 분석해 검색엔진 적용 대상 기능을 선별하고, 색인에 필요한 데이터 구조와 검색 조건·API 요청 구조를 확인했습니다.</p>
 
-            <b>연동</b>
-            <p>검색 조건을 API 요청 파라미터로 변환하고 검색 결과를 기존 서비스 구조에 맞게 가공·매핑하는 연동 로직을 개발했습니다.</p>
+            <b>구현</b>
+            <p>검색엔진 색인을 위한 데이터베이스 View를 설계·구현하고, 검색 조건 기반 API 연동 로직과 검색 결과를 기존 서비스 구조에 맞게 가공·매핑하는 로직을 개발했습니다.</p>
 
             <b>결과</b>
-            <p>기존 검색 방식 대비 <span class="highlight">검색 응답시간을 약 75% 단축</span>했습니다.</p>
+            <p>검색엔진 적용 후 기존 검색 방식과 비교한 결과, <span class="highlight">검색 응답시간을 약 75% 단축</span>했습니다.</p>
           </div>
         </article>
 
@@ -947,27 +885,114 @@
             <span class="case-label">DATA</span>
           </div>
           <div class="case-grid">
-            <b>목표</b>
-            <p>교육과정 개편에 따라 기존 콘텐츠 데이터를 신규 교육과정 체계에 맞게 이관해야 했습니다.</p>
+            <b>업무 배경</b>
+            <p>교육과정 개편으로 기존 콘텐츠의 분류 체계를 신규 교육과정 기준에 맞게 변경해야 했습니다. 전달받은 변환 기준을 기반으로 약 10만 건의 콘텐츠 데이터를 변환·이관하고 결과를 검증하는 업무를 담당했습니다.</p>
 
-            <b>처리</b>
-            <p>사전 정의된 변환 기준을 바탕으로 약 10만 건의 콘텐츠 데이터를 변환·이관했습니다.</p>
+            <b>분석</b>
+            <p>기존 콘텐츠 데이터와 분류 체계, 전달받은 변환 기준을 확인하고 변환·이관 대상 범위와 마이그레이션 전·후 비교에 사용할 데이터 및 검증 기준을 정리했습니다.</p>
 
-            <b>검증</b>
-            <p>마이그레이션 전·후 비교에 사용할 데이터와 정합성 검증 기준을 선정하고 누락·중복·불일치 여부를 확인했습니다.</p>
+            <b>수행</b>
+            <p>전달받은 기준에 따라 콘텐츠 데이터를 신규 교육과정 체계에 맞게 변환·이관하고, 마이그레이션 전·후 데이터를 비교하여 누락·중복·불일치 여부를 확인했습니다.</p>
 
-            <b>경험</b>
-            <p>대량 데이터 변경 과정에서 이관뿐 아니라 결과 검증까지 포함한 마이그레이션 업무를 수행했습니다.</p>
+            <b>결과</b>
+            <p>약 <span class="highlight">10만 건의 콘텐츠 데이터를 마이그레이션</span>하고 전·후 비교를 통해 데이터 정합성을 검증했습니다.</p>
           </div>
         </article>
       </div>
-    </section>
+      </div>
+
+      <div class="section-heading itda-subheading">
+        <h2>기타 주요 수행 업무</h2>
+        <p>대표 사례 외 운영·개선·개발 경험</p>
+      </div>
+
+      <div class="achievement-list">
+<article class="achievement">
+          <span class="num">01</span>
+          <h3>웹 애플리케이션 보안 취약점 개선</h3>
+          <p>
+            자체 소스코드 점검을 통해 보안 취약 항목을 분석하고 개선했습니다.
+          </p>
+          <ul>
+            <li>HTTP Method 미지정 구간에 GET·POST 등 요청 방식 명시</li>
+            <li>CORS 와일드카드(<code>*</code>) 허용 정책 개선</li>
+            <li>사용자 입력값을 통한 서버 파일 경로 조작 취약점 개선</li>
+            <li><span class="highlight">약 400건의 보안 취약점 개선</span></li>
+          </ul>
+        </article>
+
+<article class="achievement">
+          <span class="num">02</span>
+          <h3>Rocky Linux 설치 및 WAS 서버 환경 이전</h3>
+          <p>
+            CentOS 지원 종료에 따라 Rocky Linux를 설치하고 기존 WAS 서버 환경을 이전했습니다.
+          </p>
+          <ul>
+            <li>CentOS 지원 종료에 따른 Rocky Linux 설치 및 전환</li>
+            <li>기존 CentOS 기반 WAS 서버 환경을 Rocky Linux로 이전</li>
+          </ul>
+        </article>
+
+<article class="achievement">
+          <span class="num">03</span>
+          <h3>주간·월간 통계 배치 시스템 고도화</h3>
+          <p>
+            조회 시점에 따라 통계값이 변경되는 기존 주간 통계 처리 구조를 분석하고 배치 시스템을 고도화했습니다.
+          </p>
+          <ul>
+            <li>조회 시점에 따라 통계값이 변경되는 기존 주간 통계 처리 구조 분석</li>
+            <li>주간 통계 시스템 재설계 및 배치 로직 구현</li>
+            <li>월간 통계 집계 구조 신규 설계 및 구현</li>
+          </ul>
+        </article>
+
+<article class="achievement">
+          <span class="num">04</span>
+          <h3>외부 업체 연계를 위한 API 개발</h3>
+          <p>
+            교원 회원 대상 내부 서비스를 외부 업체에서도 활용할 수 있도록 연동 API를 개발했습니다.
+          </p>
+          <ul>
+            <li>기존 로그인 기반 서비스 로직과 외부 연동용 처리 구조 분리</li>
+            <li>JWT 기반 외부 API 인증 적용</li>
+            <li>외부 제공 범위를 고려한 데이터 항목 선별 및 응답 구조 설계</li>
+            <li>외부 시스템용 데이터 조회 및 응답 로직 구현</li>
+          </ul>
+        </article>
+
+<article class="achievement">
+          <span class="num">05</span>
+          <h3>채널 서비스 UI·기능 구조 전면 개편</h3>
+          <p>
+            기존 채널 서비스의 화면 구조와 사용자 동작 로직을 전면 개편하고 백엔드 데이터 연동을 개선했습니다.
+          </p>
+          <ul>
+            <li>채널 관리자 페이지 <b>5개</b>, 사용자 페이지 <b>6개</b>의 UI 및 기능 개선</li>
+            <li>사용자 동작에 따른 화면 로직 및 데이터 처리 기능 구현</li>
+            <li>프론트엔드 화면과 백엔드 데이터 연동 로직 개선</li>
+          </ul>
+        </article>
+
+<article class="achievement">
+          <span class="num">06</span>
+          <h3>월별 프로모션 이벤트 Full-Stack 개발</h3>
+          <p>
+            월 단위로 운영되는 다양한 프로모션 이벤트를 프론트엔드부터 백엔드까지 지속적으로 개발했습니다.
+          </p>
+          <ul>
+            <li>댓글, 콘텐츠 공유, 포인트 적립, 스텝형 등 다양한 이벤트 유형 개발</li>
+            <li>이벤트별 UI 및 사용자 동작 로직 구현</li>
+            <li>참여 데이터 저장·조회 등 프론트엔드와 백엔드 연동 기능 개발</li>
+          </ul>
+        </article>
+      </div>
+</section>
 
     <section id="steamup">
       <div class="project-header">
         <div>
           <span class="eyebrow">PROJECT 02</span>
-          <h2>SteamUp</h2>
+          <h2>교원 전용 디지털 콘텐츠 플랫폼 · STEAMuP</h2>
           <p>
             Go와 React 기반 웹 서비스에서 Locale 데이터 관리 기능을 개발하고,
             교과 콘텐츠 제작 및 웹표준 오류 개선 업무를 수행했습니다.
@@ -975,13 +1000,19 @@
           <div class="stack">
             <span class="tag">Go</span>
             <span class="tag">React</span>
-            <span class="tag">JavaScript</span>
+            <span class="tag">iBATIS</span>
+            <span class="tag">MySQL</span>
             <span class="tag">HTML</span>
             <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">jQuery</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Git</span>
           </div>
         </div>
 
         <div class="project-meta">
+          <div><b>기간</b> 2026.03 - 2026.05</div>
           <div><b>역할</b> Full-Stack 개발</div>
           <div><b>분야</b> 교육 / 콘텐츠 서비스</div>
           <div><b>담당</b> Front · Back</div>
@@ -1029,17 +1060,20 @@
           </p>
           <div class="stack">
             <span class="tag">Java</span>
-            <span class="tag">Spring MVC</span>
-            <span class="tag">e-Government Framework</span>
+            <span class="tag">Spring</span>
             <span class="tag">MyBatis</span>
-            <span class="tag">MariaDB / MySQL</span>
-            <span class="tag">JSP / JSTL</span>
-            <span class="tag">JavaScript / jQuery</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">jQuery</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Git</span>
           </div>
         </div>
 
         <div class="project-meta">
-          <div><b>기간</b> 2026.06 - 2026.08</div>
+          <div><b>기간</b> 2026.06 - 현재</div>
           <div><b>역할</b> Full-Stack 개발</div>
           <div><b>분야</b> 교육 / 과학 교육 플랫폼</div>
           <div><b>담당</b> Front · Back · DB</div>
@@ -1057,20 +1091,20 @@
           <ul>
             <li>조회 패턴에 맞는 인덱스 추가</li>
             <li>인덱스 활용을 방해하던 WHERE 절의 함수 사용 방식 개선</li>
-            <li>평균 실행시간 <span class="highlight">약 75% 단축</span></li>
+            <li>조회 조건 및 범위 최적화를 통한 불필요한 데이터 탐색 감소</li>
+            <li><span class="highlight">실행시간 약 75% 단축</span></li>
           </ul>
         </article>
 
         <article class="achievement">
           <span class="num">02</span>
-          <h3>기존 PPT 기반 사용자 매뉴얼의 웹 페이지 전환</h3>
+          <h3>기존 PPT 기반 사용자 매뉴얼 웹 페이지 전환</h3>
           <p>
-            기존 PPT 형태로 제공되던 사용자 매뉴얼을 웹 기반 매뉴얼 페이지로 재구성했습니다.
+            기존 PPT 형태의 사용자 매뉴얼을 웹 기반 페이지로 재구성했습니다.
           </p>
           <ul>
-            <li>기존 PPT 매뉴얼의 내용을 웹 페이지 구조로 재구성</li>
-            <li>AI를 활용해 문서 내용 정리 및 페이지 구조·초안 제작</li>
-            <li>웹 환경에 맞게 UI와 콘텐츠 구성 구현</li>
+            <li>기존 PPT 형태의 사용자 매뉴얼을 웹 기반 페이지로 재구성</li>
+            <li>AI를 활용해 콘텐츠 및 페이지 구조를 정리하고 웹 화면 구현</li>
           </ul>
         </article>
       </div>
